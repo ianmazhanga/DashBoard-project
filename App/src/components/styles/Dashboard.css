@@ -1,0 +1,309 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background: #f5f6f8;
+  color: #111827;
+  overflow: hidden;
+}
+
+
+.dashboard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6f8;
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header .search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+}
+
+.header input {
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  font-size: 0.85rem;
+  background: transparent;
+}
+
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  height: 100%;
+}
+
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  height: 100%;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-card h4 {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.stat-card .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.stat-card .change {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.change.positive {
+  color: #16a34a;
+}
+
+.change.negative {
+  color: #dc2626;
+}
+
+
+.transactions {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.transactions h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-status.completed {
+  color: #16a34a;
+}
+
+.transaction-status.pending {
+  color: #f59e0b;
+}
+
+.revenue-card, .sales-report {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.revenue-card h4,
+.sales-report h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.revenue-card canvas {
+  width: 100% !important;
+  height: 160px !important;
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card canvas {
+  flex: 1;
+  width: 100% !important;
+  height: 160px !important;
+}
+
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  height: 100%;
+}
+
+
+.donut-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  height: 220px;
+}
+
+.donut-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.donut-card canvas {
+  width: 150px !important;
+  height: 150px !important;
+  margin: 0 auto;
+}
+
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.donut-center h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.donut-center span {
+  font-size: 0.75rem;
+  color: #6b7280;
+  display: block;
+}
+
+
+.upgrade-box {
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.upgrade-box h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.upgrade-box p {
+  font-size: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.upgrade-box button {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upgrade-box button:hover {
+  background: #15803d;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 6px;
+}
+
+
+.small-chart canvas {
+  width: 100% !important;
+  height: 130px !important;
+}
+
+
+.small-donut canvas {
+  width: 120px !important;
+  height: 120px !important;
+  margin: 0 auto;
+}
+
+
+
